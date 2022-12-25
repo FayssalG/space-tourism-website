@@ -1,6 +1,8 @@
 import { useEffect, useState } from "react"
 import { NavLink } from "react-router-dom"
 import logo from '/assets/shared/logo.svg'
+import hamburger from '/assets/shared/icon-hamburger.svg'
+import close from '/assets/shared/icon-close.svg'
 
 export default function Nav(){
 
@@ -31,7 +33,7 @@ export default function Nav(){
             </div>
 
             <div onClick={()=>handleMenu()} id="ham" className="relative cursor-pointer md:hidden lg:hidden">
-                <img src="./src/assets/shared/icon-hamburger.svg" alt="" />
+                <img src={hamburger} alt="" />
             </div>
 
             <div className="px-20 h-20 bg-white/[4%] backdrop-blur flex items-center justify-start relative lg:before:absolute lg:before:left-[-11rem] lg:before:max-w-[12rem] lg:before:w-[18rem] lg:before:origin-right lg:before:scale-x-150 lg:before:h-[2px] lg:before:bg-white/[10%] lg:before:backdrop-blur 
@@ -45,7 +47,7 @@ export default function Nav(){
             </div>
 
             <div id="menu" className="z-20 hidden origin-right  animate-slide absolute  right-0 top-0 h-full w-[260px] bg-red-500-[4%] backdrop-blur-2xl md:hidden lg:hidden ">
-                <div onClick={()=>handleMenu()} className="cursor-pointer absolute right-8 top-8 "><img src="./src/assets/shared/icon-close.svg" alt="close" /></div>
+                <div onClick={()=>handleMenu()} className="cursor-pointer absolute right-8 top-8 "><img src={close} alt="close" /></div>
                 <ul className="flex flex-col ml-10 mt-20 gap-10 text-white text-base  ">
                     <li ><NavLink className="link-style" style={({isActive})=> isActive ? activeStyle : undefined} to='/'><span>00</span> HOME</NavLink></li>
                     <li ><NavLink className="link-style" style={({isActive})=> isActive ? activeStyle : undefined} to='/destinations'><span>01</span> DESTINATION</NavLink></li>
