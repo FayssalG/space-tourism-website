@@ -6,10 +6,11 @@ import Technology from './components/Technology'
 import { useEffect } from 'react'
 import { Routes , Route , Link } from 'react-router-dom'
 
+
 function App() {
-  const [infos , setInfos] = useState({})
+  const [infos , setInfos] = useState({})  
   useEffect(()=>{
-    fetch('./src/assets/data.json')
+    fetch('./assets/data.json')
     .then((data)=>{
       return data.json()
     })

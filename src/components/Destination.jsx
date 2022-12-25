@@ -4,7 +4,7 @@ import Nav from "./Nav";
 export default function Destination({destinations}){
     const [destIndex , setDestIndex] = useState(0)
     const getImage = ()=>{
-        return new URL('/src'+destinations[destIndex].images.png , import.meta.url).href
+        return new URL(destinations[destIndex].images.png , import.meta.url).href
     }
     const handleSwitchIndex  = (e , index)=>{
         setDestIndex(index)
@@ -14,9 +14,9 @@ export default function Destination({destinations}){
     }
 
     return(
-    <div className="min-h-screen bg-cover bg-[url('./assets/destination/background-destination-mobile.jpg')] 
-    md:bg-[url('./assets/destination/background-destination-tablet.jpg')]
-    lg:bg-[url('./assets/destination/background-destination-desktop.jpg')]">        
+    <div className="min-h-screen bg-cover bg-[url('../assets/destination/background-destination-mobile.jpg')] 
+    md:bg-[url('../assets/destination/background-destination-tablet.jpg')]
+    lg:bg-[url('../assets/destination/background-destination-desktop.jpg')]">        
         <Nav/>
         <div className=" w-[90%] mx-auto md:mt-14 lg:h-[100vh] lg:w-[80%] lg:mt-20">
             

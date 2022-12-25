@@ -3,9 +3,9 @@ import	Nav from './Nav';
 export default function Home(){
 
     return(
-    <div className="min-h-screen bg-cover bg-[url('./assets/home/background-home-mobile.jpg')] 
-        md:bg-[url('./assets/home/background-home-tablet.jpg')]
-        lg:bg-[url('./assets/home/background-home-desktop.jpg')]">
+    <div className="min-h-screen bg-cover bg-[url('../assets/home/background-home-mobile.jpg')] 
+        md:bg-[url('../assets/home/background-home-tablet.jpg')]
+        lg:bg-[url('../assets/home/background-home-desktop.jpg')]">
         <Nav/>
         <div className="flex items-center justify-center min-h-[75vh] w-[90%] mx-auto mt-14 md:w-[100%]">
 

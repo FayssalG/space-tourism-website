@@ -4,10 +4,10 @@ import Nav from './Nav'
 export default function Technology({technology}){
     const [techIndex , setTechIndex] = useState(0)
     const getImageLandscape = ()=>{
-        return new URL('/src'+technology[techIndex].images.landscape , import.meta.url).href
+        return new URL(technology[techIndex].images.landscape , import.meta.url).href
     }
     const getImagePortrait = ()=>{
-        return new URL('/src'+technology[techIndex].images.portrait , import.meta.url).href
+        return new URL(technology[techIndex].images.portrait , import.meta.url).href
     }
 
     const handleSwitchIndex = (index , e)=>{
@@ -16,9 +16,9 @@ export default function Technology({technology}){
         e.target.classList.add('selected-tech')
     }
     return(
-        <div className="min-h-screen bg-cover bg-[url('./assets/technology/background-technology-mobile.jpg')] 
-            md:bg-[url('./assets/technology/background-technology-tablet.jpg')]
-            lg:bg-[url('./assets/technology/background-technology-desktop.jpg')]">
+        <div className="min-h-screen bg-cover bg-[url('../assets/technology/background-technology-mobile.jpg')] 
+            md:bg-[url('../assets/technology/background-technology-tablet.jpg')]
+            lg:bg-[url('../assets/technology/background-technology-desktop.jpg')]">
             <Nav></Nav>
             <main className='min-h-[85vh] flex flex-col justify-center text-white md:mt-14'>
                 

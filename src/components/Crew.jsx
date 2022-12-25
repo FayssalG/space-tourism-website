@@ -5,7 +5,7 @@ import Nav from "./Nav"
 export default function Crew({crew}){
     const [crewIndex , setCrewIndex] = useState(0)
     const getImage = ()=>{
-        return new URL('/src'+crew[crewIndex].images.webp , import.meta.url).href
+        return new URL(crew[crewIndex].images.webp , import.meta.url).href
     }
 
     const handleSwitchIndex  = (index , e)=>{
@@ -19,9 +19,9 @@ export default function Crew({crew}){
     }
 
     return(
-    <div className="min-h-screen bg-cover bg-[url('./assets/crew/background-crew-mobile.jpg')] 
-    md:bg-[url('./assets/crew/background-crew-tablet.jpg')]
-    lg:bg-[url('./assets/crew/background-crew-desktop.jpg')]">
+    <div className="min-h-screen bg-cover bg-[url('../assets/crew/background-crew-mobile.jpg')] 
+    md:bg-[url('../assets/crew/background-crew-tablet.jpg')]
+    lg:bg-[url('../assets/crew/background-crew-desktop.jpg')]">
         <Nav></Nav>
         <div className="w-[90%] mx-auto sm:h-screen md:max-w-[80%]  md:min-h-fit md:mt-10  lg:min-h-fit lg:w-[80%] lg:mt-20">
             <section className="text-white">
