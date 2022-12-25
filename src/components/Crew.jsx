@@ -4,6 +4,10 @@ import Nav from "./Nav"
 
 export default function Crew({crew}){
     const [crewIndex , setCrewIndex] = useState(0)
+    const getImage = ()=>{
+        return new URL('/src'+crew[crewIndex].images.webp , import.meta.url).href
+    }
+
     const handleSwitchIndex  = (index , e)=>{
         setCrewIndex(index)
         const dot = document.querySelector('.active-dot')
@@ -25,7 +29,7 @@ export default function Crew({crew}){
 
                 <div className="flex flex-col items-center gap-10 md:flex-col-reverse lg:flex-row-reverse lg:items-end lg:justify-between lg:h-[80vh] lg:gap-20 ">
                     {/* Crew Image */}
-                    <div className="w-full border-b-solid border-b-2 border-b-grey-dark md:border-none lg:border-none lg:max-w-[420px]"><img className="w-[50%] mx-auto sm:w-auto sm:h-[200px]  lg:w-[90%]" src={crew && './src/'+ crew[crewIndex].images.webp} alt="crew" /></div>
+                    <div className="w-full border-b-solid border-b-2 border-b-grey-dark md:border-none lg:border-none lg:max-w-[420px]"><img className="w-[50%] mx-auto sm:w-auto sm:h-[200px]  lg:w-[90%]" src={crew && getImage()} alt="crew" /></div>
 
                     {/* Crew Infos */}
                     <div className="text-center flex flex-col gap-6 items-center md:flex-col-reverse  lg:flex-col-reverse lg:items-start lg:justify-center lg:max-w-[700px] lg:h-full lg:gap-10">

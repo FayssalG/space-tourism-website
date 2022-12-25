@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react"
 import { NavLink } from "react-router-dom"
+import logo from '../assets/shared/logo.svg'
 
 export default function Nav(){
 
@@ -26,7 +27,7 @@ export default function Nav(){
     return(
         <nav className="flex items-center  pt-2  min-w-[250px] h-20 justify-between sm:mx-4 md:p-0 lg:pt-16 lg:pl-10">
             <div className="w-10 md:ml-4">
-                <img src="./src/assets/shared/logo.svg" alt="" />
+                <img src={logo} alt="" />
             </div>
 
             <div onClick={()=>handleMenu()} id="ham" className="relative cursor-pointer md:hidden lg:hidden">

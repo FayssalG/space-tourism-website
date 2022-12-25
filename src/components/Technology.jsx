@@ -3,6 +3,13 @@ import Nav from './Nav'
 
 export default function Technology({technology}){
     const [techIndex , setTechIndex] = useState(0)
+    const getImageLandscape = ()=>{
+        return new URL('/src'+technology[techIndex].images.landscape , import.meta.url).href
+    }
+    const getImagePortrait = ()=>{
+        return new URL('/src'+technology[techIndex].images.portrait , import.meta.url).href
+    }
+
     const handleSwitchIndex = (index , e)=>{
         setTechIndex(index)
         document.querySelector('.selected-tech').classList.remove('selected-tech')
@@ -21,9 +28,9 @@ export default function Technology({technology}){
 
                     {/* Image */}
                     <picture className='w-full lg:max-h-[400px] lg:max-w-[400px] lg:order-1 lg:ml-10'>
-                        <source media='(max-width:1024px)' srcSet={technology && './src'+ technology[techIndex].images.landscape}/>
-                        <source media='(min-width:1024px)' srcSet={technology && './src'+ technology[techIndex].images.portrait}/>
-                        <img className='w-full' src={technology && './src'+ technology[techIndex].images.landscape} alt="" />
+                        <source media='(max-width:1024px)' srcSet={technology && getImageLandscape()}/>
+                        <source media='(min-width:1024px)' srcSet={technology && getImagePortrait()}/>
+                        <img className='w-full' src={technology && getImageLandscape()} alt="" />
                     </picture>
                     {/* switching between images */}
                     <div className='font-Bellefair flex gap-4 justify-center [&>button]:w-10 [&>button]:h-10 [&>button]:rounded-full [&>button]:button-border 

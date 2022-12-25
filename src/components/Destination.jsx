@@ -3,6 +3,9 @@ import Nav from "./Nav";
 
 export default function Destination({destinations}){
     const [destIndex , setDestIndex] = useState(0)
+    const getImage = ()=>{
+        return new URL('/src'+destinations[destIndex].images.png , import.meta.url).href
+    }
     const handleSwitchIndex  = (e , index)=>{
         setDestIndex(index)
         document.querySelector('.selected-dest').classList.remove('selected-dest')
@@ -21,7 +24,7 @@ export default function Destination({destinations}){
             <section className="text-white flex flex-col gap-6 items-center justify-center lg:flex-row lg:gap-28">
                 <div className="w-full flex flex-col gap-6 items-center lg:gap-12">
                     <h1 className="uppercase tracking-widest text-white font-BarlowCondensed text-lg md:self-start lg:self-start lg:text-[1.5rem] md:text-[1.3rem]"><span className="text-white/[25%] mr-2">01</span>pick your destination</h1>
-                    <div className="w-[170px] lg:w-[445px]"><img src={destinations && './src/'+destinations[destIndex].images.png} alt="" /></div>
+                    <div className="w-[170px] lg:w-[445px]"><img src={destinations && getImage()} alt="" /></div>
                 </div>
                 
                 <div className="w-full flex flex-col gap-6 items-center lg:max-w-[450px] ">
