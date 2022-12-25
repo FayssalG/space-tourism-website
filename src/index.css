@@ -1,0 +1,37 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components{
+    .active-dot{
+        @apply opacity-100;
+    }
+    .unactive-dot{
+        @apply opacity-20 hover:opacity-50
+    }
+
+    .link-style{
+        @apply w-fit h-full flex items-center font-BarlowCondensed font-light tracking-widest;
+        @apply  [&>span]:mr-2 [&>span]:font-bold md:[&>span]:hidden;
+        @apply border-solid border-transparent border-b-2 hover:border-white/[20%] sm:border-none
+    }
+
+    .link-active{
+        @apply border-solid border-b-2 border-white
+    }
+    .selected-dest{
+
+        @apply text-white;
+        @apply relative after:absolute after:h-1 after:w-full after:bg-white after:left-0 after:bottom-0;
+        @apply pb-2;
+        @apply after:origin-left after:animate-switchIn;
+    
+    }
+    .selected-tech{
+        @apply bg-white text-black;
+
+    }
+    .button-border{
+        @apply border-[1px] border-grey-light border-solid hover:border-white hover:border-[2px]; 
+    }
+}
