@@ -25,7 +25,7 @@ function App() {
   return (
     <div className="App" >
           <Routes>
-            <Route path='/' element={<Home/>} Link={Link}></Route>
+            <Route path='/' element={<Home/>}></Route>
             <Route path='/destinations' element={<Destination  destinations={infos.destinations}/>}></Route>
             <Route path='/crew' element={<Crew crew={infos.crew}/>} ></Route>
             <Route path='/technology' element={<Technology technology={infos.technology}/>}></Route>
